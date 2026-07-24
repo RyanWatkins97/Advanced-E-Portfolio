@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f9d1273cbb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "hAf5T6MWhQg9RhniE",
+        });
+    })();
+    </script>
+</head>
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/logo.png">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#landing-page" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About
+                    </a>
+
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects
+                    </a>
+                    
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Contact
+                    </a>
+                    
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fa-solid fa-circle-half-stroke"></i>
+                    </a>
+                    
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <header class="header">
+        <div class="header__content">
+            <h1 class="title">Hey</h1>
+            <h1 class="title yellow">I'm Ryan.</h1>
+            <p class="header__para">Hi, I'm Ryan Watkins, an aspiring <b class="yellow">Frontend Software Engineer.</b>
+                 <br>I'm passionate about building clean, responsive, and user-friendly <br>web applications using HTML, CSS, JavaScript, and modern<br> frontend technologies.
+                 Here's a bit more <b class="yellow click" onclick="toggleModal()">about me</b>.
+            </p>
+            <div class="social__list">
+                <a href="https://www.linkedin.com/in/ryan-watkins-5bb056413/" target="_blank" class="social__link click"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/RyanWatkins97" target="_blank" class="social__link click"><i class="fa-brands fa-github"></i></a>
+                <a href="./assets/Ryan_Watkins_Resume.pdf" target="_blank" class="social__link click"><i class="fa-solid fa-file"></i></a>
+            </div>
+        </div>
+    </header>
+    <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()"><i class="fa-solid fa-envelope"></i></button>
+    </a>
+    <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+    </a>
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+            <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+            <p class="modal__para">I'm a 28-year-old aspiring <b class="yellow">frontend software engineer</b> currently sharpening my skills through a frontend software engineering bootcamp. I enjoy building modern, responsive web applications with <b class="yellow">HTML</b>, <b class="yellow">CSS</b>, <b class="yellow">JavaScript</b>, and <b class="yellow">React</b> and I'm passionate about creating clean, user-friendly experiences while continuously growing as a <b class="yellow">developer</b> and taking on new challenges.</p>
+            <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img src="./assets/HTML_img.png" alt="" class="modal__language--img">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/CSS_img.png" alt="" class="modal__language--img">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/JS_img.png" alt="" class="modal__language--img">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/REACT_img.png" alt="" class="modal__language--img react__img">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forward to speaking to you soon.</div>
+            </div>
+        </div>
+    </div>
+    <img src="./assets/peace.svg" class="shape shape--0">
+    <img src="./assets/sun.svg" class="shape shape--1">
+    <img src="./assets/plane.svg" class="shape shape--2">
+    <img src="./assets/earth.svg" class="shape shape--3">
+    <img src="./assets/peace.svg" class="shape shape--4">
+    <img src="./assets/sun.svg" class="shape shape--5">
+    <img src="./assets/plane.svg" class="shape shape--6">
+    <img src="./assets/earth2.svg" class="shape shape--7">
+    <img src="./assets/peace.svg" class="shape shape--8">
+</section>
+<section id="projects">
+    <div class="container">
+        <div class="row">
+            <h1 class="section__title">Here are some of mine <span class="yellow">projects</span>
+        </h1>
+        <ul class="project__list">
+            <li class="project">
+                <div class="project__wrapper project__gap">
+                    <img src="./assets/Sample-Project.png" class="project__img" alt="">
+                    <div class="project__wrapper--bg"></div>
+                    <div class="project__description">
+                        <h3 class="project__description--title">Sample FES Website</h3>
+                        <h4 class="project__description--sub-title">
+                            HTML, CSS
+                        </h4>
+                        <p class="project__description--para">
+                            Frontend Simplified is a responsive HTML and CSS landing page featuring a modern interface, organized content, and mobile-friendly design. It highlights core front-end development skills and clean, maintainable code.
+                        </p>
+                        <div class="project__description--links">
+                            <a href="#" class="project__description--link">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="#" class="project__description--link">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project__wrapper project__gap">
+                    <img src="./assets/FESLibrary-Project.png" class="project__img" alt="">
+                    <div class="project__wrapper--bg"></div>
+                    <div class="project__description">
+                        <h3 class="project__description--title">FES Library</h3>
+                        <h4 class="project__description--sub-title">
+                            HTML, CSS
+                        </h4>
+                        <p class="project__description--para">
+                            Library is a responsive landing page built with HTML and CSS. It features a clean, modern design with intuitive navigation, and a call-to-action, demonstrating strong front-end fundamentals, semantic HTjML, responsive layouts, and clean CSS styling.
+                        </p>
+                        <div class="project__description--links">
+                            <a href="#" class="project__description--link">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="#" class="project__description--link">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project__wrapper project__gap--bottom">
+                    <img src="./assets/Treact-Project.png" class="project__img" alt="">
+                    <div class="project__wrapper--bg"></div>
+                    <div class="project__description">
+                        <h3 class="project__description--title">Treact Website</h3>
+                        <h4 class="project__description--sub-title">
+                            HTML, CSS
+                        </h4>
+                        <p class="project__description--para">
+                            Treact Landing Page is a responsive website built with HTML and CSS. It features a clean, modern layout with responsive navigation, and reusable components, showcasing fundamental front-end development and responsive design skills.
+                        </p>
+                        <div class="project__description--links">
+                            <a href="#" class="project__description--link">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="#" class="project__description--link">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row footer__row">
+        <figure>
+            <img src="./assets/logo.png" class="footer__logo--img" alt="">
+        </figure>
+            <div class="footer__social--list">
+                <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">GitHub</a>
+                <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">LinkedIn</a>
+                <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">Email</a>
+                <a href="#contact" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">Resume</a>
+            </div>
+            <div class="footer__copyright">Copyright &copy; Ryan Watkins 2026</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
