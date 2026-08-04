@@ -656,6 +656,7 @@ footer {
     top: 15vh;
     width: 20vw;
     height: 50px;
+    
 }
 
 .shape--1 {
@@ -731,6 +732,18 @@ footer {
         width: 100%;
         
     }
+
+    .shape--0,
+    .shape--1,
+    .shape--2,
+    .shape--3,
+    .shape--4,
+    .shape--5,
+    .shape--6,
+    .shape--7,
+    .shape--8 {
+        visibility: hidden;
+    }
 }
 
 /* Small phones */
@@ -765,5 +778,17 @@ footer {
 
     .modal__half {
         padding: 40px;
+    }
+
+    .shape--0,
+    .shape--1,
+    .shape--2,
+    .shape--3,
+    .shape--4,
+    .shape--5,
+    .shape--6,
+    .shape--7,
+    .shape--8 {
+        visibility: hidden;
     }
 }
